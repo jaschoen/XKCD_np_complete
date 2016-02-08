@@ -15,6 +15,6 @@ This is a solution to the xkcd comic "My hobby: embedding NP-complete problems i
 
 # To do list:
 	-Convert to rails app
-	-separate output methods and business logic to distinct classes
+	-Separate output methods and business logic to distinct classes
 	-More specs, better specs, DRYer specs
 
