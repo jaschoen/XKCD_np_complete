@@ -20,21 +20,19 @@ def build_possible_orders(menu_options, exact_amount_to_spend)
   possible_orders = Hash.new { |hash, key| hash[key] = [] }
   # initialize hash, key is order cost, value is array of possible orders at that cost
   possible_orders[0] << []
-  # now to find permutations with items under max qty
+  # find permutations with items under max qty
   # for every menu item 
   menu_options.each do |item_name, item_price|
     # and every possible order in the hash
      possible_orders.to_a.each do |order_cost, orders_array|
-      # create new key value pair if it doesn't exist
       # fill each possible order with 1..max items 
        1.upto(max_item_qty) do |count|
-         # new key is old key plus item price * number of that item
          new_order_cost = order_cost + item_price * count
          # break if over amount to spend to reduce permutations
          break if new_order_cost > exact_amount_to_spend
          # store it in possible_order hash:
          # create new key value pair if key doesn't exist
-         # if key does exist, add another array of the order
+         # if key does exist, add another array of that order
          possible_orders[new_order_cost] += orders_array.map { |order| order + [item_name] * count }
        end
      end
@@ -64,9 +62,9 @@ def output_final_choices(menu_options, exact_amount_to_spend)
   puts " with this menu:"
   output_menu(menu_options)
   puts "You can buy..."
-  # sleep 1
+  sleep 1
   puts "Dun dun dun"
-  # sleep 1.3
+  sleep 1.3
 end
 
 def output_final_solutions(menu_options, exact_amount_to_spend)
