@@ -1,4 +1,4 @@
-# This is a solution to the xkcd comic "My hobby: embedding NP-complete problems in restaurant orders", available at http://xkcd.com/287/
+This is a solution to the xkcd comic "My hobby: embedding NP-complete problems in restaurant orders", available at http://xkcd.com/287/
 
 # To run program from base directory, type ruby lib/menu.rb <file>
 		Example: to run the xkcd.txt menu from source_menus folder
